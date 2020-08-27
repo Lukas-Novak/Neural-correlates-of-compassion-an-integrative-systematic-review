@@ -1,1 +1,1 @@
-# Neural-correlates-of-compassion-an-integrative-systematic-review
+# Neural correlates of compassion an integrative systematic review
