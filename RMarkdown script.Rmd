@@ -31,9 +31,10 @@ library(irr)
 library(checkpoint)
 library(osfr)
 
-# if problems with replication of analysis would accure, unchech the follwoing
-# line: 
+# if problems with replication of analysis would occur, uncheck the following line: 
 #checkpoint(snapshotDate = "2020-09-18", R.version = "4.0.1")
+
+
 # data loading,
 osf_retrieve_file("https://osf.io/dxr4e/") %>%
 osf_download(conflicts = "overwrite")
