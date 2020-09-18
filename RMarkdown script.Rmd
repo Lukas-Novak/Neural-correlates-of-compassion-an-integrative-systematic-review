@@ -31,7 +31,7 @@ library(irr)
 library(checkpoint)
 library(osfr)
 
-# if problems with replication of analysis would occur, uncheck the following line: 
+# if problems with replication of the analysis would occur, uncheck the following line: 
 #checkpoint(snapshotDate = "2020-09-18", R.version = "4.0.1")
 
 
@@ -43,7 +43,6 @@ kapp_data <- read.csv2("c.kappa.data.csv")
 # percent agreement 
 agree(kapp_data, tolerance=0) 
 # p-value for Kappa
-#C. Kappa 1:  
 kappa2(ratings = kapp_data)$p.value %>% 
   format_p()
 # Kappa value 
