@@ -30,6 +30,7 @@ library(parameters)
 library(irr)
 library(checkpoint)
 library(osfr)
+set.seed(874354)
 
 # if problems with replication of the analysis would occur, uncheck the following line: 
 #checkpoint(snapshotDate = "2020-09-18", R.version = "4.0.1")
