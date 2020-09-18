@@ -1,0 +1,64 @@
+---
+keywords          : "keywords"
+wordcount         : "X"
+
+bibliography      : ["r-references.bib"]
+
+floatsintext      : no
+figurelist        : no
+tablelist         : no
+footnotelist      : no
+linenumbers       : yes
+mask              : no
+draft             : no
+
+documentclass     : "apa6"
+classoption       : "man"
+output            : papaja::apa6_pdf
+---
+
+```{r setup, include = FALSE}
+library("papaja")
+r_refs("r-references.bib")
+```
+
+
+```{r Inter-rater reliability and percent agreement}
+library(psych)
+library(dplyr)
+library(parameters)
+library(irr)
+library(checkpoint)
+library(osfr)
+
+# if problems with replication of analysis would accure, unchech the follwoing
+# line: 
+#checkpoint(snapshotDate = "2020-09-18", R.version = "4.0.1")
+# data loading,
+osf_retrieve_file("https://osf.io/dxr4e/") %>%
+osf_download(conflicts = "overwrite")
+
+kapp_data <- read.csv2("c.kappa.data.csv") 
+# percent agreement 
+agree(kapp_data, tolerance=0) 
+# p-value for Kappa
+#C. Kappa 1:  
+kappa2(ratings = kapp_data)$p.value %>% 
+  format_p()
+# Kappa value 
+kappa2(ratings = kapp_data)$value %>% 
+  round(digits = 2)
+```
+
+
+
+\newpage
+
+# References
+
+\begingroup
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
+
+<div id="refs" custom-style="Bibliography"></div>
+\endgroup
